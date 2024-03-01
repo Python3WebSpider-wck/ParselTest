@@ -9,8 +9,12 @@ html = '''
      </ul>
  </div>
 '''
+# from parsel import Selector
+# selector = Selector(text=html)
+# result = selector.css('.item-0').re('link.*')
+# print(result)
+
 from parsel import Selector
 selector = Selector(text=html)
-result = selector.css('.item-0').re('link.*')
+result = selector.css('.item-0 *::text').re('.*item')
 print(result)
-
