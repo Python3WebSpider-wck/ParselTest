@@ -10,6 +10,7 @@ html = '''
  </div>
 '''
 from parsel import Selector
+
 selector = Selector(text=html)
 result = selector.css('.item-0').re_first('<span class="bold">(.*?)</span>')
 print(result)

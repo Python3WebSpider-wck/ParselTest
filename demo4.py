@@ -10,8 +10,11 @@ html = '''
  </div>
 '''
 from parsel import Selector
+
 selector = Selector(text=html)
+
 result = selector.css('.item-0.active a::attr(href)').get()
 print(result)
+
 result = selector.xpath('//li[contains(@class, "item-0") and contains(@class, "active")]/a/@href').get()
 print(result)

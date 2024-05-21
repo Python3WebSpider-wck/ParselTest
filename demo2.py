@@ -10,11 +10,14 @@ html = '''
  </div>
 '''
 from parsel import Selector
+
 selector = Selector(text=html)
-items = selector.css('.item-0')
+
+# items = selector.css('.item-0')
 # for item in items:
 #     text = item.xpath('.//text()').get()
 #     print(text)
+# print('\n')
 
 # result = selector.xpath('//li[contains(@class, "item-0")]//text()').get()
 # print(result)
@@ -22,8 +25,8 @@ items = selector.css('.item-0')
 # result = selector.xpath('//li[contains(@class, "item-0")]//text()').getall()
 # print(result)
 
-result = selector.css('.item-0 *::text').getall()
-print(result)
+# result = selector.css('.item-0 *::text').getall()
+# print(result)
 
 result = selector.css('.item-0::text').get()
 print(result)
